@@ -12,5 +12,6 @@ var searchData=
   ['ccx_5fisotp_5ftx_5fstate_5ft_9',['CCX_ISOTP_TX_State_t',['../group__ccx__isotp.html#gab014934015aa313f023557279307545d',1,'can_corex_isotp.h']]],
   ['ccx_5fnet_5fnode_5ftype_5ft_10',['CCX_net_node_type_t',['../group__ccx__net.html#ga2de1c9c2a3204bef39dc81fbf0d532d3',1,'can_corex_net.h']]],
   ['ccx_5fnet_5freplication_5ft_11',['CCX_net_replication_t',['../group__ccx__net.html#gad445010941c8967232f4ee37ad63144c',1,'can_corex_net.h']]],
-  ['ccx_5fnet_5fstatus_5ft_12',['CCX_net_status_t',['../group__ccx__net.html#gac8353c898975e1c15f43065bb70940c6',1,'can_corex_net.h']]]
+  ['ccx_5fnet_5fstatus_5ft_12',['CCX_net_status_t',['../group__ccx__net.html#gac8353c898975e1c15f43065bb70940c6',1,'can_corex_net.h']]],
+  ['ccx_5futils_5fstatus_5ft_13',['CCX_UTILS_Status_t',['../group__ccx__utils.html#ga666c1e84a4e36dae0cf171e8f810237b',1,'can_corex_utils.h']]]
 ];
