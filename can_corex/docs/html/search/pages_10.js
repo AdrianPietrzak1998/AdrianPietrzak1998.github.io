@@ -5,7 +5,7 @@ var searchData=
   ['important_20notes_2',['Important Notes',['../index.html#autotoc_md84',1,'']]],
   ['important_20semantics_3',['Important Semantics',['../index.html#autotoc_md64',1,'']]],
   ['init_20helpers_4',['Config Init Helpers',['../index.html#autotoc_md71',1,'']]],
-  ['initial_20release_3a_20v1_200_200_202025_2004_2026_5',['Initial Release: v1.0.0 (2025-04-26)',['../index.html#autotoc_md129',1,'']]],
+  ['initial_20release_3a_20v1_200_200_202025_2004_2026_5',['Initial Release: v1.0.0 (2025-04-26)',['../index.html#autotoc_md130',1,'']]],
   ['initialization_20and_20configuration_6',['Initialization and Configuration',['../index.html#autotoc_md21',1,'']]],
   ['initialize_20tables_20properly_7',['5. Initialize Tables Properly',['../index.html#autotoc_md97',1,'']]],
   ['integration_20model_8',['Practical Integration Model',['../index.html#autotoc_md14',1,'']]],

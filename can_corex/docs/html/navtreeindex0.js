@@ -122,6 +122,7 @@ var NAVTREEINDEX0 =
 "index.html#autotoc_md128":[22,13],
 "index.html#autotoc_md129":[22,14],
 "index.html#autotoc_md13":[4,1],
+"index.html#autotoc_md130":[22,15],
 "index.html#autotoc_md14":[4,2],
 "index.html#autotoc_md16":[5],
 "index.html#autotoc_md18":[6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "struct_c_c_x__instance__t.html#a00753a080bc45d12b5f6606b6f085890":[23,0,4,2],
 "struct_c_c_x__instance__t.html#a97d7e5c488925757d18740cb87b6b399":[23,0,4,0],
 "struct_c_c_x__instance__t.html#ab1da926281abba66037f38ae6d160ddc":[23,0,4,1],
-"struct_c_c_x__message__t.html":[23,0,1],
-"struct_c_c_x__net__node__settings__t.html":[23,2,0]
+"struct_c_c_x__message__t.html":[23,0,1]
 };

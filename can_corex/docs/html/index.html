@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CAN CoreX<span id="projectnumber">&#160;2.3.0</span>
+   <div id="projectname">CAN CoreX<span id="projectnumber">&#160;2.3.1</span>
    </div>
    <div id="projectbrief">Table-driven CAN, CAN FD, ISO-TP, network simulation, and bus monitoring library</div>
   </td>
@@ -93,7 +93,7 @@ $(function(){initNavTree('index.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
-<p><a href="https://opensource.org/licenses/MPL-2.0"><img src="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg" alt="License: MPL 2.0" style="pointer-events: none;" class="inline"/></a> <a href="#changelog"><img src="https://img.shields.io/badge/Version-2.3.0-blue.svg" alt="Version 2.3.0" style="pointer-events: none;" class="inline"/></a> <a href="https://en.wikipedia.org/wiki/C_(programming_language)"><img src="https://img.shields.io/badge/Language-C-blue.svg" alt="Language: C" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/badge/Platform-Embedded-orange.svg" alt="Platform: Embedded" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/Tests-700%20passing-success.svg" alt="Tests: 700 passing" style="pointer-events: none;" class="inline"/> <a href="#iso-tp"><img src="https://img.shields.io/badge/ISO--TP-validated%20with%20PEAK%20PCAN--ISO--TP%20API-informational.svg" alt="ISO-TP validated with PEAK PCAN-ISO-TP API" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/AdrianPietrzak1998/can_corex/stargazers"><img src="https://img.shields.io/github/stars/AdrianPietrzak1998/can_corex?style=social" alt="GitHub stars" class="inline"/></a> <a href="https://github.com/AdrianPietrzak1998/can_corex/network/members"><img src="https://img.shields.io/github/forks/AdrianPietrzak1998/can_corex?style=social" alt="GitHub forks" class="inline"/></a></p>
+<p><a href="https://opensource.org/licenses/MPL-2.0"><img src="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg" alt="License: MPL 2.0" style="pointer-events: none;" class="inline"/></a> <a href="#changelog"><img src="https://img.shields.io/badge/Version-2.3.1-blue.svg" alt="Version 2.3.1" style="pointer-events: none;" class="inline"/></a> <a href="https://en.wikipedia.org/wiki/C_(programming_language)"><img src="https://img.shields.io/badge/Language-C-blue.svg" alt="Language: C" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/badge/Platform-Embedded-orange.svg" alt="Platform: Embedded" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/Tests-715%20passing-success.svg" alt="Tests: 715 passing" style="pointer-events: none;" class="inline"/> <a href="#iso-tp"><img src="https://img.shields.io/badge/ISO--TP-validated%20with%20PEAK%20PCAN--ISO--TP%20API-informational.svg" alt="ISO-TP validated with PEAK PCAN-ISO-TP API" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/AdrianPietrzak1998/can_corex/stargazers"><img src="https://img.shields.io/github/stars/AdrianPietrzak1998/can_corex?style=social" alt="GitHub stars" class="inline"/></a> <a href="https://github.com/AdrianPietrzak1998/can_corex/network/members"><img src="https://img.shields.io/github/forks/AdrianPietrzak1998/can_corex?style=social" alt="GitHub forks" class="inline"/></a></p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Overview</h1>
 <p>CAN CoreX is built around one practical idea: most CAN applications end up maintaining the same RX parsers, TX messages, timeouts, and periodic traffic by hand. This library moves that work into explicit RX/TX tables and a small polling model.</p>
@@ -111,7 +111,7 @@ Examples</h1>
 <li>ISO-TP support for both classic CAN and CAN FD</li>
 <li>optional bus monitoring and runtime statistics</li>
 </ul>
-<p>Version <span class="tt">2.3.0</span> adds the optional <span class="tt">can_corex_utils</span> module with classic SLCAN text conversion, hex helpers, and linear signal encode/decode helpers while keeping the core CAN/ISO-TP runtime unchanged.</p>
+<p>Version <span class="tt">2.3.1</span> hardens initialization and periodic TX behavior: <span class="tt">CCX_Init()</span> now reports a missing primary timebase explicitly, and periodic TX table entries retry instead of silently skipping a period when the TX queue is full.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Table of Contents</h1>
 <ol type="1">
@@ -182,8 +182,8 @@ Minimal Example</h2>
 <div class="line">    CCX_Poll(&amp;can1);</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__ccx__core_html_ga70585984e6ec15a9196313ed8068272f"><div class="ttname"><a href="group__ccx__core.html#ga70585984e6ec15a9196313ed8068272f">CCX_tick_variable_register</a></div><div class="ttdeci">void CCX_tick_variable_register(CCX_TIME_t *Variable)</div><div class="ttdoc">Registers the system tick source variable.</div></div>
-<div class="ttc" id="astruct_c_c_x___r_x__table__t_html"><div class="ttname"><a href="struct_c_c_x___r_x__table__t.html">CCX_RX_table_t</a></div><div class="ttdoc">CAN RX table entry structure.</div><div class="ttdef"><b>Definition</b> can_corex.h:385</div></div>
-<div class="ttc" id="astruct_c_c_x___t_x__table__t_html"><div class="ttname"><a href="struct_c_c_x___t_x__table__t.html">CCX_TX_table_t</a></div><div class="ttdoc">CAN TX table entry structure.</div><div class="ttdef"><b>Definition</b> can_corex.h:440</div></div>
+<div class="ttc" id="astruct_c_c_x___r_x__table__t_html"><div class="ttname"><a href="struct_c_c_x___r_x__table__t.html">CCX_RX_table_t</a></div><div class="ttdoc">CAN RX table entry structure.</div><div class="ttdef"><b>Definition</b> can_corex.h:390</div></div>
+<div class="ttc" id="astruct_c_c_x___t_x__table__t_html"><div class="ttname"><a href="struct_c_c_x___t_x__table__t.html">CCX_TX_table_t</a></div><div class="ttdoc">CAN TX table entry structure.</div><div class="ttdef"><b>Definition</b> can_corex.h:445</div></div>
 </div><!-- fragment --><p>The point is not fewer lines at all costs. The point is that message handling becomes explicit and centralized.</p>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
@@ -264,7 +264,7 @@ Quick Start</h1>
 <div class="line">}</div>
 <div class="ttc" id="agroup__ccx__isotp_html_ga68c9b05ed6a297fc45a995c046119502"><div class="ttname"><a href="group__ccx__isotp.html#ga68c9b05ed6a297fc45a995c046119502">CCX_ISOTP_TX_Poll</a></div><div class="ttdeci">void CCX_ISOTP_TX_Poll(CCX_ISOTP_TX_t *Instance)</div><div class="ttdoc">Poll ISO-TP TX instance (call periodically from main loop).</div></div>
 <div class="ttc" id="agroup__ccx__isotp_html_ga8d865e935a9e9cfd07ff7bc645916bce"><div class="ttname"><a href="group__ccx__isotp.html#ga8d865e935a9e9cfd07ff7bc645916bce">CCX_ISOTP_RX_Poll</a></div><div class="ttdeci">void CCX_ISOTP_RX_Poll(CCX_ISOTP_RX_t *Instance)</div><div class="ttdoc">Poll ISO-TP RX instance (call periodically from main loop).</div></div>
-<div class="ttc" id="astruct_c_c_x__instance__t_html"><div class="ttname"><a href="struct_c_c_x__instance__t.html">CCX_instance_t</a></div><div class="ttdef"><b>Definition</b> can_corex.h:455</div></div>
+<div class="ttc" id="astruct_c_c_x__instance__t_html"><div class="ttname"><a href="struct_c_c_x__instance__t.html">CCX_instance_t</a></div><div class="ttdef"><b>Definition</b> can_corex.h:460</div></div>
 </div><!-- fragment --><hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 API Reference</h1>
@@ -282,8 +282,8 @@ Initialization and Configuration</h2>
 <div class="line">    <a class="code hl_enumeration" href="group__ccx__core.html#ga3ca4a4f49bf7ec070e0824b2eaec3549">CCX_BusIsFree_t</a> (*BusCheck)(<span class="keyword">const</span> <a class="code hl_struct" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance),</div>
 <div class="line">    <span class="keywordtype">void</span> (*ParserUnregMsg)(<span class="keyword">const</span> <a class="code hl_struct" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, <a class="code hl_struct" href="struct_c_c_x__message__t.html">CCX_message_t</a> *Msg)</div>
 <div class="line">);</div>
-<div class="ttc" id="agroup__ccx__core_html_ga3ca4a4f49bf7ec070e0824b2eaec3549"><div class="ttname"><a href="group__ccx__core.html#ga3ca4a4f49bf7ec070e0824b2eaec3549">CCX_BusIsFree_t</a></div><div class="ttdeci">CCX_BusIsFree_t</div><div class="ttdoc">Enumeration indicating the status of the CAN bus.</div><div class="ttdef"><b>Definition</b> can_corex.h:242</div></div>
-<div class="ttc" id="astruct_c_c_x__message__t_html"><div class="ttname"><a href="struct_c_c_x__message__t.html">CCX_message_t</a></div><div class="ttdoc">Structure representing a CAN message.</div><div class="ttdef"><b>Definition</b> can_corex.h:331</div></div>
+<div class="ttc" id="agroup__ccx__core_html_ga3ca4a4f49bf7ec070e0824b2eaec3549"><div class="ttname"><a href="group__ccx__core.html#ga3ca4a4f49bf7ec070e0824b2eaec3549">CCX_BusIsFree_t</a></div><div class="ttdeci">CCX_BusIsFree_t</div><div class="ttdoc">Enumeration indicating the status of the CAN bus.</div><div class="ttdef"><b>Definition</b> can_corex.h:247</div></div>
+<div class="ttc" id="astruct_c_c_x__message__t_html"><div class="ttname"><a href="struct_c_c_x__message__t.html">CCX_message_t</a></div><div class="ttdoc">Structure representing a CAN message.</div><div class="ttdef"><b>Definition</b> can_corex.h:336</div></div>
 </div><!-- fragment --><p><b>Description</b>: Initializes a CAN CoreX instance with specified tables and callbacks.</p>
 <p><b>Parameters</b>:</p><ul>
 <li><span class="tt">Instance</span>: Pointer to instance structure to initialize</li>
@@ -591,7 +591,7 @@ Data Structures</h1>
 <div class="line">    CCX_FD_DLC_24B = 12,  CCX_FD_DLC_32B = 13,</div>
 <div class="line">    CCX_FD_DLC_48B = 14,  CCX_FD_DLC_64B = 15,</div>
 <div class="line">} <a class="code hl_enumeration" href="group__ccx__core.html#ga94d1374f642a9815305362ff55029c07">CCX_FD_DLC_t</a>;</div>
-<div class="ttc" id="agroup__ccx__core_html_ga94d1374f642a9815305362ff55029c07"><div class="ttname"><a href="group__ccx__core.html#ga94d1374f642a9815305362ff55029c07">CCX_FD_DLC_t</a></div><div class="ttdeci">CCX_FD_DLC_t</div><div class="ttdoc">Named CAN FD DLC values.</div><div class="ttdef"><b>Definition</b> can_corex.h:637</div></div>
+<div class="ttc" id="agroup__ccx__core_html_ga94d1374f642a9815305362ff55029c07"><div class="ttname"><a href="group__ccx__core.html#ga94d1374f642a9815305362ff55029c07">CCX_FD_DLC_t</a></div><div class="ttdeci">CCX_FD_DLC_t</div><div class="ttdoc">Named CAN FD DLC values.</div><div class="ttdef"><b>Definition</b> can_corex.h:642</div></div>
 </div><!-- fragment --><hr  />
 <h2 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
 <span class="tt">CCX_RX_table_t</span></h2>
@@ -914,7 +914,7 @@ Transmitter Node (Sending ISO-TP Messages)</h3>
 <div class="line">    <a class="code hl_function" href="group__ccx__isotp.html#ga68c9b05ed6a297fc45a995c046119502">CCX_ISOTP_TX_Poll</a>(&amp;isotp_tx); <span class="comment">// Handle ISO-TP TX state machine</span></div>
 <div class="line">}</div>
 <div class="ttc" id="acan__corex__isotp_8h_html"><div class="ttname"><a href="can__corex__isotp_8h.html">can_corex_isotp.h</a></div><div class="ttdoc">ISO-TP transport layer public API.</div></div>
-<div class="ttc" id="agroup__ccx__core_html_ggaef58737cfae5bae4a37512c016e9543eafd63468818b54879957d6fb08436696f"><div class="ttname"><a href="group__ccx__core.html#ggaef58737cfae5bae4a37512c016e9543eafd63468818b54879957d6fb08436696f">CCX_ID_STANDARD</a></div><div class="ttdeci">@ CCX_ID_STANDARD</div><div class="ttdoc">Standard 11-bit identifier.</div><div class="ttdef"><b>Definition</b> can_corex.h:252</div></div>
+<div class="ttc" id="agroup__ccx__core_html_ggaef58737cfae5bae4a37512c016e9543eafd63468818b54879957d6fb08436696f"><div class="ttname"><a href="group__ccx__core.html#ggaef58737cfae5bae4a37512c016e9543eafd63468818b54879957d6fb08436696f">CCX_ID_STANDARD</a></div><div class="ttdeci">@ CCX_ID_STANDARD</div><div class="ttdoc">Standard 11-bit identifier.</div><div class="ttdef"><b>Definition</b> can_corex.h:257</div></div>
 <div class="ttc" id="agroup__ccx__isotp_html_ga4f4a10ef5c00db10af32dbe06a97003c"><div class="ttname"><a href="group__ccx__isotp.html#ga4f4a10ef5c00db10af32dbe06a97003c">CCX_ISOTP_Transmit</a></div><div class="ttdeci">CCX_ISOTP_Status_t CCX_ISOTP_Transmit(CCX_ISOTP_TX_t *Instance, const uint8_t *Data, CCX_ISOTP_Length_t Length)</div><div class="ttdoc">Transmit data using ISO-TP.</div></div>
 <div class="ttc" id="agroup__ccx__isotp_html_ga880403e7e2e52c05f2086f697827cfab"><div class="ttname"><a href="group__ccx__isotp.html#ga880403e7e2e52c05f2086f697827cfab">CCX_ISOTP_TX_Config_Init</a></div><div class="ttdeci">void CCX_ISOTP_TX_Config_Init(CCX_ISOTP_TX_Config_t *Config, uint32_t TxID, uint8_t IDE_TxID, CCX_TIME_t N_Bs, CCX_TIME_t N_Cs, CCX_ISOTP_Padding_t Padding, void *UserData, void(*OnTransmitComplete)(CCX_ISOTP_TX_t *Instance, void *UserData), void(*OnError)(CCX_ISOTP_TX_t *Instance, CCX_ISOTP_Status_t Error, void *UserData))</div><div class="ttdoc">Initialize ISO-TP TX configuration with defaults.</div></div>
 <div class="ttc" id="agroup__ccx__isotp_html_gaea2b7222aeb32d91e68590ade416611e"><div class="ttname"><a href="group__ccx__isotp.html#gaea2b7222aeb32d91e68590ade416611e">CCX_ISOTP_TX_Init</a></div><div class="ttdeci">CCX_ISOTP_Status_t CCX_ISOTP_TX_Init(CCX_ISOTP_TX_t *Instance, CCX_instance_t *CanInstance, const CCX_ISOTP_TX_Config_t *Config)</div><div class="ttdoc">Initialize ISO-TP TX instance.</div></div>
@@ -932,7 +932,7 @@ CAN FD ISO-TP Example</h3>
 <div class="line"><a class="code hl_function" href="group__ccx__isotp.html#gae83a1682944bb8f79a1b5c643893b704">CCX_ISOTP_TX_Config_InitFD</a>(&amp;tx_cfg, 0x123, <a class="code hl_enumvalue" href="group__ccx__core.html#ggaef58737cfae5bae4a37512c016e9543eafd63468818b54879957d6fb08436696f">CCX_ID_STANDARD</a>, <a class="code hl_enumvalue" href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94ae6a4c6b1e22d01ae222789df7ba40708">CCX_FRAME_FORMAT_FD_BRS</a>, CCX_ISOTP_TX_DL_64, 1000,</div>
 <div class="line">                           1000, CCX_ISOTP_PADDING(0xAA), NULL, tx_complete_callback, tx_error_callback);</div>
 <div class="line">tx_cfg.MaxWaitFrames = 10;</div>
-<div class="ttc" id="agroup__ccx__core_html_ggab419a9e22226c54717fa25f1ad108b94ae6a4c6b1e22d01ae222789df7ba40708"><div class="ttname"><a href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94ae6a4c6b1e22d01ae222789df7ba40708">CCX_FRAME_FORMAT_FD_BRS</a></div><div class="ttdeci">@ CCX_FRAME_FORMAT_FD_BRS</div><div class="ttdoc">CAN FD with bit-rate switch (BRS=1).</div><div class="ttdef"><b>Definition</b> can_corex.h:274</div></div>
+<div class="ttc" id="agroup__ccx__core_html_ggab419a9e22226c54717fa25f1ad108b94ae6a4c6b1e22d01ae222789df7ba40708"><div class="ttname"><a href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94ae6a4c6b1e22d01ae222789df7ba40708">CCX_FRAME_FORMAT_FD_BRS</a></div><div class="ttdeci">@ CCX_FRAME_FORMAT_FD_BRS</div><div class="ttdoc">CAN FD with bit-rate switch (BRS=1).</div><div class="ttdef"><b>Definition</b> can_corex.h:279</div></div>
 <div class="ttc" id="agroup__ccx__isotp_html_gae83a1682944bb8f79a1b5c643893b704"><div class="ttname"><a href="group__ccx__isotp.html#gae83a1682944bb8f79a1b5c643893b704">CCX_ISOTP_TX_Config_InitFD</a></div><div class="ttdeci">void CCX_ISOTP_TX_Config_InitFD(CCX_ISOTP_TX_Config_t *Config, uint32_t TxID, uint8_t IDE_TxID, CCX_frame_format_t FrameFormat, uint8_t TxDL, CCX_TIME_t N_Bs, CCX_TIME_t N_Cs, CCX_ISOTP_Padding_t Padding, void *UserData, void(*OnTransmitComplete)(CCX_ISOTP_TX_t *Instance, void *UserData), void(*OnError)(CCX_ISOTP_TX_t *Instance, CCX_ISOTP_Status_t Error, void *UserData))</div><div class="ttdoc">Initialize ISO-TP TX FD configuration with defaults.</div></div>
 </div><!-- fragment --><p><span class="tt">TxDL</span> accepts only legal FD payload sizes: <span class="tt">8, 12, 16, 20, 24, 32, 48, 64</span>.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
@@ -1144,7 +1144,7 @@ Overview</h2>
 <div class="line">    <span class="comment">// Wildcard - accepts any DLC</span></div>
 <div class="line">    {.ID = 0x200, .DLC = <a class="code hl_define" href="group__ccx__core.html#ga59fbea40b5d08cdab9cf100b52535b77">CCX_DLC_ANY</a>, .IDE_flag = 0, .Parser = my_parser}</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__ccx__core_html_ga59fbea40b5d08cdab9cf100b52535b77"><div class="ttname"><a href="group__ccx__core.html#ga59fbea40b5d08cdab9cf100b52535b77">CCX_DLC_ANY</a></div><div class="ttdeci">#define CCX_DLC_ANY</div><div class="ttdoc">Special DLC value for wildcard matching in RX table.</div><div class="ttdef"><b>Definition</b> can_corex.h:105</div></div>
+<div class="ttc" id="agroup__ccx__core_html_ga59fbea40b5d08cdab9cf100b52535b77"><div class="ttname"><a href="group__ccx__core.html#ga59fbea40b5d08cdab9cf100b52535b77">CCX_DLC_ANY</a></div><div class="ttdeci">#define CCX_DLC_ANY</div><div class="ttdoc">Special DLC value for wildcard matching in RX table.</div><div class="ttdef"><b>Definition</b> can_corex.h:110</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 <span class="tt">CCX_DLC_ANY</span> value</h2>
 <table class="markdownTable">
@@ -1174,7 +1174,7 @@ FD build wildcard with frame-format filter</h2>
 <div class="line">};</div>
 <div class="line">CCX_Init(&amp;can, rx_table, NULL, 3, 0, send_fn, bus_fn, NULL);</div>
 <div class="line"><span class="comment">// FrameFormat is part of the aggregate initializer - no post-Init fixup needed</span></div>
-<div class="ttc" id="agroup__ccx__core_html_ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d"><div class="ttname"><a href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d">CCX_FRAME_FORMAT_CLASSIC</a></div><div class="ttdeci">@ CCX_FRAME_FORMAT_CLASSIC</div><div class="ttdoc">Classic CAN 2.0, max 8-byte payload.</div><div class="ttdef"><b>Definition</b> can_corex.h:272</div></div>
+<div class="ttc" id="agroup__ccx__core_html_ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d"><div class="ttname"><a href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d">CCX_FRAME_FORMAT_CLASSIC</a></div><div class="ttdeci">@ CCX_FRAME_FORMAT_CLASSIC</div><div class="ttdoc">Classic CAN 2.0, max 8-byte payload.</div><div class="ttdef"><b>Definition</b> can_corex.h:277</div></div>
 </div><!-- fragment --><p><span class="tt">FrameFormat</span> uses the <span class="tt"><a class="el" href="group__ccx__core.html#gab419a9e22226c54717fa25f1ad108b94" title="CAN frame format selection.">CCX_frame_format_t</a></span> enum values:</p><ul>
 <li><span class="tt"><a class="el" href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d" title="Classic CAN 2.0, max 8-byte payload.">CCX_FRAME_FORMAT_CLASSIC</a></span> (0) - matches classic (non-FD) frames only</li>
 <li><span class="tt"><a class="el" href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94ab0bf46b2698e38a12fcb077a499fb2a1" title="CAN FD without bit-rate switch (BRS=0).">CCX_FRAME_FORMAT_FD</a></span> (1) - matches FD frames (any BRS setting)</li>
@@ -1230,13 +1230,13 @@ Global Statistics</h2>
 <div class="line"><a class="code hl_function" href="group__ccx__core.html#ga40ca423ee716097e87b2a28f6bf1603e">CCX_ResetGlobalStats</a>(&amp;can_instance);</div>
 <div class="ttc" id="agroup__ccx__core_html_ga40ca423ee716097e87b2a28f6bf1603e"><div class="ttname"><a href="group__ccx__core.html#ga40ca423ee716097e87b2a28f6bf1603e">CCX_ResetGlobalStats</a></div><div class="ttdeci">void CCX_ResetGlobalStats(CCX_instance_t *Instance)</div><div class="ttdoc">Reset global statistics.</div></div>
 <div class="ttc" id="agroup__ccx__core_html_ga79556e20424c525a422c6e65bf460a3e"><div class="ttname"><a href="group__ccx__core.html#ga79556e20424c525a422c6e65bf460a3e">CCX_GetGlobalStats</a></div><div class="ttdeci">const CCX_GlobalStats_t * CCX_GetGlobalStats(const CCX_instance_t *Instance)</div><div class="ttdoc">Get global statistics.</div></div>
-<div class="ttc" id="astruct_c_c_x___global_stats__t_html"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html">CCX_GlobalStats_t</a></div><div class="ttdoc">Global statistics for CAN instance.</div><div class="ttdef"><b>Definition</b> can_corex.h:294</div></div>
-<div class="ttc" id="astruct_c_c_x___global_stats__t_html_a733a5e1137653d80206d04b31f128db7"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#a733a5e1137653d80206d04b31f128db7">CCX_GlobalStats_t::tx_buffer_overflows</a></div><div class="ttdeci">uint32_t tx_buffer_overflows</div><div class="ttdoc">Number of times TX buffer was full.</div><div class="ttdef"><b>Definition</b> can_corex.h:299</div></div>
-<div class="ttc" id="astruct_c_c_x___global_stats__t_html_a9e8a4f9489edcc31cc7a0ae2fbbf3dd6"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#a9e8a4f9489edcc31cc7a0ae2fbbf3dd6">CCX_GlobalStats_t::peak_tx_depth</a></div><div class="ttdeci">uint16_t peak_tx_depth</div><div class="ttdoc">Highest TX buffer depth observed since stats reset.</div><div class="ttdef"><b>Definition</b> can_corex.h:303</div></div>
-<div class="ttc" id="astruct_c_c_x___global_stats__t_html_aac36b11c92e115af2f6bbf0857710f0c"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#aac36b11c92e115af2f6bbf0857710f0c">CCX_GlobalStats_t::total_rx_messages</a></div><div class="ttdeci">uint32_t total_rx_messages</div><div class="ttdoc">Total messages received and pushed to RX buffer.</div><div class="ttdef"><b>Definition</b> can_corex.h:295</div></div>
-<div class="ttc" id="astruct_c_c_x___global_stats__t_html_acd96b5af359e9842d019e815c11901e9"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#acd96b5af359e9842d019e815c11901e9">CCX_GlobalStats_t::rx_buffer_overflows</a></div><div class="ttdeci">uint32_t rx_buffer_overflows</div><div class="ttdoc">Number of times RX buffer was full.</div><div class="ttdef"><b>Definition</b> can_corex.h:298</div></div>
-<div class="ttc" id="astruct_c_c_x___global_stats__t_html_add64d1271bd289a685fc233c683de39d"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#add64d1271bd289a685fc233c683de39d">CCX_GlobalStats_t::total_tx_messages</a></div><div class="ttdeci">uint32_t total_tx_messages</div><div class="ttdoc">Total messages successfully transmitted (call CCX_OnMessageTransmitted from ISR).</div><div class="ttdef"><b>Definition</b> can_corex.h:297</div></div>
-<div class="ttc" id="astruct_c_c_x___global_stats__t_html_af3eb3173442c519d67202e404e70671c"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#af3eb3173442c519d67202e404e70671c">CCX_GlobalStats_t::peak_rx_depth</a></div><div class="ttdeci">uint16_t peak_rx_depth</div><div class="ttdoc">Highest RX buffer depth observed since stats reset.</div><div class="ttdef"><b>Definition</b> can_corex.h:302</div></div>
+<div class="ttc" id="astruct_c_c_x___global_stats__t_html"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html">CCX_GlobalStats_t</a></div><div class="ttdoc">Global statistics for CAN instance.</div><div class="ttdef"><b>Definition</b> can_corex.h:299</div></div>
+<div class="ttc" id="astruct_c_c_x___global_stats__t_html_a733a5e1137653d80206d04b31f128db7"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#a733a5e1137653d80206d04b31f128db7">CCX_GlobalStats_t::tx_buffer_overflows</a></div><div class="ttdeci">uint32_t tx_buffer_overflows</div><div class="ttdoc">Number of times TX buffer was full.</div><div class="ttdef"><b>Definition</b> can_corex.h:304</div></div>
+<div class="ttc" id="astruct_c_c_x___global_stats__t_html_a9e8a4f9489edcc31cc7a0ae2fbbf3dd6"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#a9e8a4f9489edcc31cc7a0ae2fbbf3dd6">CCX_GlobalStats_t::peak_tx_depth</a></div><div class="ttdeci">uint16_t peak_tx_depth</div><div class="ttdoc">Highest TX buffer depth observed since stats reset.</div><div class="ttdef"><b>Definition</b> can_corex.h:308</div></div>
+<div class="ttc" id="astruct_c_c_x___global_stats__t_html_aac36b11c92e115af2f6bbf0857710f0c"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#aac36b11c92e115af2f6bbf0857710f0c">CCX_GlobalStats_t::total_rx_messages</a></div><div class="ttdeci">uint32_t total_rx_messages</div><div class="ttdoc">Total messages received and pushed to RX buffer.</div><div class="ttdef"><b>Definition</b> can_corex.h:300</div></div>
+<div class="ttc" id="astruct_c_c_x___global_stats__t_html_acd96b5af359e9842d019e815c11901e9"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#acd96b5af359e9842d019e815c11901e9">CCX_GlobalStats_t::rx_buffer_overflows</a></div><div class="ttdeci">uint32_t rx_buffer_overflows</div><div class="ttdoc">Number of times RX buffer was full.</div><div class="ttdef"><b>Definition</b> can_corex.h:303</div></div>
+<div class="ttc" id="astruct_c_c_x___global_stats__t_html_add64d1271bd289a685fc233c683de39d"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#add64d1271bd289a685fc233c683de39d">CCX_GlobalStats_t::total_tx_messages</a></div><div class="ttdeci">uint32_t total_tx_messages</div><div class="ttdoc">Total messages successfully transmitted (call CCX_OnMessageTransmitted from ISR).</div><div class="ttdef"><b>Definition</b> can_corex.h:302</div></div>
+<div class="ttc" id="astruct_c_c_x___global_stats__t_html_af3eb3173442c519d67202e404e70671c"><div class="ttname"><a href="struct_c_c_x___global_stats__t.html#af3eb3173442c519d67202e404e70671c">CCX_GlobalStats_t::peak_rx_depth</a></div><div class="ttdeci">uint16_t peak_rx_depth</div><div class="ttdoc">Highest RX buffer depth observed since stats reset.</div><div class="ttdef"><b>Definition</b> can_corex.h:307</div></div>
 </div><!-- fragment --><p><b>Important:</b> For accurate TX counting, call <span class="tt"><a class="el" href="group__ccx__core.html#gad33a15bfeb394e5be1c93375af807019" title="Notify library that a message was successfully transmitted.">CCX_OnMessageTransmitted()</a></span> from your CAN TX complete interrupt: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> CAN_TX_IRQHandler(<span class="keywordtype">void</span>) {</div>
 <div class="line">    <span class="comment">// Clear interrupt flag</span></div>
 <div class="line">    <span class="comment">// ...</span></div>
@@ -1555,7 +1555,31 @@ Author</h1>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
 Changelog</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
-Current Release: v2.3.0 (2026-05-18)</h2>
+Current Release: v2.3.1 (2026-05-21)</h2>
+<ul>
+<li><b>Initialization hardening</b>:<ul>
+<li><span class="tt">CCX_Init()</span> now returns <span class="tt">CCX_MISSING_TIMEBASE</span> when the primary tick source has not been registered</li>
+<li>prevents silent <span class="tt">0</span> tick fallback during table <span class="tt">LastTick</span> initialization</li>
+</ul>
+</li>
+<li><b>Version metadata</b>:<ul>
+<li>added public <span class="tt">CCX_VERSION_MAJOR</span>, <span class="tt">CCX_VERSION_MINOR</span>, <span class="tt">CCX_VERSION_PATCH</span>, and <span class="tt">CCX_VERSION_STRING</span> macros</li>
+</ul>
+</li>
+<li><b>Periodic TX reliability</b>:<ul>
+<li>TX table <span class="tt">LastTick</span> is updated only after <span class="tt">CCX_TX_PushMsg()</span> accepts the generated message</li>
+<li>periodic messages retry on the next <span class="tt">CCX_Poll()</span> when the TX queue was full</li>
+</ul>
+</li>
+<li><b>Tests</b>:<ul>
+<li>added regression coverage for missing primary timebase detection</li>
+<li>added regression coverage for periodic TX retry after queue-full enqueue failure</li>
+</ul>
+</li>
+<li><b>Breaking Changes</b>: None to existing function signatures, enum values, or initialization APIs</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
+Previous Release: v2.3.0 (2026-05-18)</h2>
 <ul>
 <li><b>Optional utilities module</b>:<ul>
 <li>added <span class="tt"><a class="el" href="can__corex__utils_8h.html" title="Optional utility helpers for CAN CoreX applications.">can_corex_utils.h</a></span> and <span class="tt">can_corex_utils.c</span></li>
@@ -1581,7 +1605,7 @@ Current Release: v2.3.0 (2026-05-18)</h2>
 </li>
 <li><b>Breaking Changes</b>: None to existing core function signatures, enum values, or initialization APIs</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
 Previous Release: v2.2.2 (2026-04-26)</h2>
 <ul>
 <li><b>Queue observability</b>:<ul>
@@ -1616,7 +1640,7 @@ Previous Release: v2.2.2 (2026-04-26)</h2>
 </li>
 <li><b>Breaking Changes</b>: None to existing function signatures, enum values, or initialization APIs</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
 Previous Release: v2.2.1 (2026-04-24)</h2>
 <ul>
 <li><b>Bus-monitoring header split</b>:<ul>
@@ -1635,7 +1659,7 @@ Previous Release: v2.2.1 (2026-04-24)</h2>
 </li>
 <li><b>Breaking Changes</b>: None for normal users of the public API</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
 Previous Release: v2.2.0 (2026-04-21)</h2>
 <ul>
 <li><b>Timebase contract cleanup</b>:<ul>
@@ -1671,7 +1695,7 @@ Previous Release: v2.2.0 (2026-04-21)</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
 Previous Release: v2.1.0 (2026-04-19)</h2>
 <ul>
 <li><b>CAN FD Support</b> (<span class="tt">-DCCX_ENABLE_CANFD=1</span>): 64-byte payloads, BRS, ESI - zero overhead when disabled<ul>
@@ -1713,7 +1737,7 @@ Previous Release: v2.1.0 (2026-04-19)</h2>
 <li><b>Breaking Changes</b> (FD ISO-TP users): ISO-TP length-related APIs now use <span class="tt">CCX_ISOTP_Length_t</span></li>
 <li><b>No breaking changes</b> for classic (<span class="tt"><a class="el" href="group__ccx__core.html#gafd02a045a7207ae057d6bad9052b46d2" title="Enables CAN FD support (64-byte payload, BRS, ESI, FDF).">CCX_ENABLE_CANFD</a>=0</span>) builds - fully backward compatible with v1.4.x</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
 Previous Release: v2.0.0 (2026-04-18)</h2>
 <ul>
 <li><b>CAN FD Support</b> (<span class="tt">-DCCX_ENABLE_CANFD=1</span>): 64-byte payloads, BRS, ESI support added to the CAN core<ul>
@@ -1737,7 +1761,7 @@ Previous Release: v2.0.0 (2026-04-18)</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
 v1.4.4 (2026-04-01)</h2>
 <ul>
 <li><b>Bug Fixes</b>:<ul>
@@ -1770,7 +1794,7 @@ v1.4.4 (2026-04-01)</h2>
 <li><b>Breaking Changes</b>: None - all changes are internal fixes, fully backward compatible</li>
 <li><b>Testing</b>: 275/275 tests passing (linear, binary); 279/279 tests passing (hash)</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
 Previous Release: v1.4.3 (2026-02-13)</h2>
 <ul>
 <li><b>ISO-TP Flow Control Frame Fix (CRITICAL)</b>: Fixed FC frame layout to comply with ISO 15765-2<ul>
@@ -1800,7 +1824,7 @@ Previous Release: v1.4.3 (2026-02-13)</h2>
 </li>
 <li><b>Testing</b>: 253/253 tests passing across all three search modes (linear, binary, hash)</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
 Previous Release: v1.4.2 (2026-02-10)</h2>
 <ul>
 <li><b>ISO-TP Protocol Fixes</b>: Critical timing implementation corrections<ul>
@@ -1833,7 +1857,7 @@ Previous Release: v1.4.2 (2026-02-10)</h2>
 <li><b>Testing</b>: All 241 tests passing, including previously failing ISO-TP boundary condition tests</li>
 <li><b>Hardware Validation</b>: Confirmed working on STM32 CAN peripherals</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
 Previous Release: v1.4.1 (2026-02-05)</h2>
 <ul>
 <li><b>Bug-fix</b><ul>
@@ -1841,7 +1865,7 @@ Previous Release: v1.4.1 (2026-02-05)</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md126"></a>
 Previous Release: v1.4.0 (2026-02-05)</h2>
 <ul>
 <li><b>Compile-Time RX Lookup Strategies</b>: Configurable message search methods<ul>
@@ -1888,7 +1912,7 @@ Previous Release: v1.4.0 (2026-02-05)</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md126"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
 Previous Release: v1.3.0 (2026-01-27)</h2>
 <ul>
 <li><b>Bus Management</b>: Automatic bus-off detection and recovery<ul>
@@ -1927,7 +1951,7 @@ Previous Release: v1.3.0 (2026-01-27)</h2>
 </li>
 <li><b>Breaking Changes</b>: None - fully backward compatible with v1.2.0</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
 Previous Release: v1.2.0 (2026-01-26)</h2>
 <ul>
 <li><b>UserData Context in Parsers</b>: Added <span class="tt">void *UserData</span> to RX/TX table structures<ul>
@@ -1981,7 +2005,7 @@ Previous Release: v1.2.0 (2026-01-26)</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
 Previous Release: v1.1.0 (2026-01-22)</h2>
 <ul>
 <li><b>Per-message timeout callbacks</b>: <span class="tt">TimeoutCallback</span> moved from <span class="tt"><a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a></span> to <span class="tt"><a class="el" href="struct_c_c_x___r_x__table__t.html" title="CAN RX table entry structure.">CCX_RX_table_t</a></span> for better flexibility</li>
@@ -1989,7 +2013,7 @@ Previous Release: v1.1.0 (2026-01-22)</h2>
 <li><b>Documentation</b>: Updated all examples and best practices to reflect new timeout callback approach</li>
 <li><b>Performance</b>: Reduced overhead - timeout callbacks now only called when needed per message</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md130"></a>
 Initial Release: v1.0.0 (2025-04-26)</h2>
 <ul>
 <li>Initial release</li>

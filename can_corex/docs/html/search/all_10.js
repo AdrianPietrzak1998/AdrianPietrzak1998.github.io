@@ -6,7 +6,7 @@ var searchData=
   ['important_20semantics_3',['Important Semantics',['../index.html#autotoc_md64',1,'']]],
   ['in_5fgrace_5fperiod_4',['in_grace_period',['../struct_c_c_x___bus_monitor__t.html#a85140a94e750281dbee31bb27302617e',1,'CCX_BusMonitor_t']]],
   ['init_20helpers_5',['Config Init Helpers',['../index.html#autotoc_md71',1,'']]],
-  ['initial_20release_3a_20v1_200_200_202025_2004_2026_6',['Initial Release: v1.0.0 (2025-04-26)',['../index.html#autotoc_md129',1,'']]],
+  ['initial_20release_3a_20v1_200_200_202025_2004_2026_6',['Initial Release: v1.0.0 (2025-04-26)',['../index.html#autotoc_md130',1,'']]],
   ['initialization_20and_20configuration_7',['Initialization and Configuration',['../index.html#autotoc_md21',1,'']]],
   ['initialize_20tables_20properly_8',['5. Initialize Tables Properly',['../index.html#autotoc_md97',1,'']]],
   ['integration_20model_9',['Practical Integration Model',['../index.html#autotoc_md14',1,'']]],

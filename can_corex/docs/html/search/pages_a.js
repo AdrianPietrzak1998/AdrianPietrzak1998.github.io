@@ -32,5 +32,5 @@ var searchData=
   ['corex_29',['CAN CoreX',['../index.html',1,'']]],
   ['creating_20messages_30',['4. Validate DLC Before Creating Messages',['../index.html#autotoc_md96',1,'']]],
   ['critical_20messages_31',['6. Use Timeouts for Critical Messages',['../index.html#autotoc_md98',1,'']]],
-  ['current_20release_3a_20v2_203_200_202026_2005_2018_32',['Current Release: v2.3.0 (2026-05-18)',['../index.html#autotoc_md115',1,'']]]
+  ['current_20release_3a_20v2_203_201_202026_2005_2021_32',['Current Release: v2.3.1 (2026-05-21)',['../index.html#autotoc_md115',1,'']]]
 ];

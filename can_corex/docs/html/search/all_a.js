@@ -117,6 +117,6 @@ var searchData=
   ['corex_114',['CAN CoreX',['../index.html',1,'']]],
   ['creating_20messages_115',['4. Validate DLC Before Creating Messages',['../index.html#autotoc_md96',1,'']]],
   ['critical_20messages_116',['6. Use Timeouts for Critical Messages',['../index.html#autotoc_md98',1,'']]],
-  ['current_20release_3a_20v2_203_200_202026_2005_2018_117',['Current Release: v2.3.0 (2026-05-18)',['../index.html#autotoc_md115',1,'']]],
+  ['current_20release_3a_20v2_203_201_202026_2005_2021_117',['Current Release: v2.3.1 (2026-05-21)',['../index.html#autotoc_md115',1,'']]],
   ['current_5fstate_118',['current_state',['../struct_c_c_x___bus_monitor__t.html#a9d42a219afeb0e05edfe39be68e7b8b5',1,'CCX_BusMonitor_t']]]
 ];
