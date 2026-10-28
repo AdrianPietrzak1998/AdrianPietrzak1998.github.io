@@ -38,7 +38,7 @@ var searchData=
   ['ccx_5fid_5fextended_35',['CCX_ID_EXTENDED',['../group__ccx__core.html#ggaef58737cfae5bae4a37512c016e9543ea0ed7e278190a20ee9b353ef695e03c95',1,'can_corex.h']]],
   ['ccx_5fid_5fstandard_36',['CCX_ID_STANDARD',['../group__ccx__core.html#ggaef58737cfae5bae4a37512c016e9543eafd63468818b54879957d6fb08436696f',1,'can_corex.h']]],
   ['ccx_5fide_5ft_37',['CCX_ide_t',['../group__ccx__core.html#gaef58737cfae5bae4a37512c016e9543e',1,'can_corex.h']]],
-  ['ccx_5finit_38',['&lt;span class=&quot;tt&quot;&gt;CCX_Init&lt;/span&gt;',['../index.html#autotoc_md22',1,'']]],
+  ['ccx_5finit_38',['CCX_Init',['../index.html#autotoc_md22',1,'&lt;span class=&quot;tt&quot;&gt;CCX_Init&lt;/span&gt;'],['../group__ccx__core.html#gac7cfe767850696c31fc730217a8f019c',1,'CCX_Init(CCX_instance_t *Instance, CCX_RX_table_t *CCX_RX_table, CCX_TX_table_t *CCX_TX_table, uint16_t RxTableSize, uint16_t TxTableSize, void(*SendFunction)(const CCX_instance_t *Instance, const CCX_message_t *msg), CCX_BusIsFree_t(*BusCheck)(const CCX_instance_t *Instance), void(*ParserUnregMsg)(const CCX_instance_t *Instance, CCX_message_t *Msg)):&#160;can_corex.h']]],
   ['ccx_5finstance_5ft_39',['CCX_instance_t',['../struct_c_c_x__instance__t.html',1,'']]],
   ['ccx_5fisotp_5ffc_5ffs_5ft_40',['CCX_ISOTP_FC_FS_t',['../group__ccx__isotp.html#gaaaea8bfa20e171d8b7bfd27c6d4e677f',1,'can_corex_isotp.h']]],
   ['ccx_5fisotp_5fmax_5fclassic_5fdata_5fsize_41',['CCX_ISOTP_MAX_CLASSIC_DATA_SIZE',['../group__ccx__isotp.html#ga2985ee464a150bfdf1db9704ad279737',1,'can_corex_isotp.h']]],
@@ -117,6 +117,6 @@ var searchData=
   ['corex_114',['CAN CoreX',['../index.html',1,'']]],
   ['creating_20messages_115',['4. Validate DLC Before Creating Messages',['../index.html#autotoc_md96',1,'']]],
   ['critical_20messages_116',['6. Use Timeouts for Critical Messages',['../index.html#autotoc_md98',1,'']]],
-  ['current_20release_3a_20v2_203_201_202026_2005_2021_117',['Current Release: v2.3.1 (2026-05-21)',['../index.html#autotoc_md115',1,'']]],
+  ['current_20release_3a_20v3_200_200_202026_2010_2028_117',['Current Release: v3.0.0 (2026-10-28)',['../index.html#autotoc_md115',1,'']]],
   ['current_5fstate_118',['current_state',['../struct_c_c_x___bus_monitor__t.html#a9d42a219afeb0e05edfe39be68e7b8b5',1,'CCX_BusMonitor_t']]]
 ];

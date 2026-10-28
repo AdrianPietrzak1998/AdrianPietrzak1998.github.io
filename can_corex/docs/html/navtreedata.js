@@ -126,22 +126,23 @@ var NAVTREE =
     [ "License", "index.html#autotoc_md112", null ],
     [ "Author", "index.html#autotoc_md113", null ],
     [ "Changelog", "index.html#autotoc_md114", [
-      [ "Current Release: v2.3.1 (2026-05-21)", "index.html#autotoc_md115", null ],
-      [ "Previous Release: v2.3.0 (2026-05-18)", "index.html#autotoc_md116", null ],
-      [ "Previous Release: v2.2.2 (2026-04-26)", "index.html#autotoc_md117", null ],
-      [ "Previous Release: v2.2.1 (2026-04-24)", "index.html#autotoc_md118", null ],
-      [ "Previous Release: v2.2.0 (2026-04-21)", "index.html#autotoc_md119", null ],
-      [ "Previous Release: v2.1.0 (2026-04-19)", "index.html#autotoc_md120", null ],
-      [ "Previous Release: v2.0.0 (2026-04-18)", "index.html#autotoc_md121", null ],
-      [ "v1.4.4 (2026-04-01)", "index.html#autotoc_md122", null ],
-      [ "Previous Release: v1.4.3 (2026-02-13)", "index.html#autotoc_md123", null ],
-      [ "Previous Release: v1.4.2 (2026-02-10)", "index.html#autotoc_md124", null ],
-      [ "Previous Release: v1.4.1 (2026-02-05)", "index.html#autotoc_md125", null ],
-      [ "Previous Release: v1.4.0 (2026-02-05)", "index.html#autotoc_md126", null ],
-      [ "Previous Release: v1.3.0 (2026-01-27)", "index.html#autotoc_md127", null ],
-      [ "Previous Release: v1.2.0 (2026-01-26)", "index.html#autotoc_md128", null ],
-      [ "Previous Release: v1.1.0 (2026-01-22)", "index.html#autotoc_md129", null ],
-      [ "Initial Release: v1.0.0 (2025-04-26)", "index.html#autotoc_md130", null ]
+      [ "Current Release: v3.0.0 (2026-10-28)", "index.html#autotoc_md115", null ],
+      [ "Previous Release: v2.3.1 (2026-05-21)", "index.html#autotoc_md116", null ],
+      [ "Previous Release: v2.3.0 (2026-05-18)", "index.html#autotoc_md117", null ],
+      [ "Previous Release: v2.2.2 (2026-04-26)", "index.html#autotoc_md118", null ],
+      [ "Previous Release: v2.2.1 (2026-04-24)", "index.html#autotoc_md119", null ],
+      [ "Previous Release: v2.2.0 (2026-04-21)", "index.html#autotoc_md120", null ],
+      [ "Previous Release: v2.1.0 (2026-04-19)", "index.html#autotoc_md121", null ],
+      [ "Previous Release: v2.0.0 (2026-04-18)", "index.html#autotoc_md122", null ],
+      [ "v1.4.4 (2026-04-01)", "index.html#autotoc_md123", null ],
+      [ "Previous Release: v1.4.3 (2026-02-13)", "index.html#autotoc_md124", null ],
+      [ "Previous Release: v1.4.2 (2026-02-10)", "index.html#autotoc_md125", null ],
+      [ "Previous Release: v1.4.1 (2026-02-05)", "index.html#autotoc_md126", null ],
+      [ "Previous Release: v1.4.0 (2026-02-05)", "index.html#autotoc_md127", null ],
+      [ "Previous Release: v1.3.0 (2026-01-27)", "index.html#autotoc_md128", null ],
+      [ "Previous Release: v1.2.0 (2026-01-26)", "index.html#autotoc_md129", null ],
+      [ "Previous Release: v1.1.0 (2026-01-22)", "index.html#autotoc_md130", null ],
+      [ "Initial Release: v1.0.0 (2025-04-26)", "index.html#autotoc_md131", null ]
     ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
@@ -169,7 +170,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"struct_c_c_x__net__node__settings__t.html"
+"struct_c_c_x__instance__t.html#ab1da926281abba66037f38ae6d160ddc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

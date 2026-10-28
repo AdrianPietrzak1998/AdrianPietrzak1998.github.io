@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CAN CoreX<span id="projectnumber">&#160;2.3.1</span>
+   <div id="projectname">CAN CoreX<span id="projectnumber">&#160;3.0.0</span>
    </div>
    <div id="projectbrief">Table-driven CAN, CAN FD, ISO-TP, network simulation, and bus monitoring library</div>
   </td>
@@ -221,8 +221,8 @@ void&#160;</td><td class="memItemRight"><b>CCX_Flush</b> (<a class="el" href="st
 void&#160;</td><td class="memItemRight"><b>CCX_Reset</b> (<a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance)</td></tr>
 <tr class="memitem:ga2eb2fb3f05bf7fd4def73c649be9986e" id="r_ga2eb2fb3f05bf7fd4def73c649be9986e"><td class="memItemLeft"><a id="ga2eb2fb3f05bf7fd4def73c649be9986e" name="ga2eb2fb3f05bf7fd4def73c649be9986e"></a>
 CCX_Status_t&#160;</td><td class="memItemRight"><b>CCX_Poll</b> (<a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance)</td></tr>
-<tr class="memitem:gac7cfe767850696c31fc730217a8f019c" id="r_gac7cfe767850696c31fc730217a8f019c"><td class="memItemLeft"><a id="gac7cfe767850696c31fc730217a8f019c" name="gac7cfe767850696c31fc730217a8f019c"></a>
-CCX_Status_t&#160;</td><td class="memItemRight"><b>CCX_Init</b> (<a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, <a class="el" href="struct_c_c_x___r_x__table__t.html">CCX_RX_table_t</a> *CCX_RX_table, <a class="el" href="struct_c_c_x___t_x__table__t.html">CCX_TX_table_t</a> *CCX_TX_table, uint16_t RxTableSize, uint16_t TxTableSize, void(*SendFunction)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, const <a class="el" href="struct_c_c_x__message__t.html">CCX_message_t</a> *msg), <a class="el" href="#ga3ca4a4f49bf7ec070e0824b2eaec3549">CCX_BusIsFree_t</a>(*BusCheck)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance), void(*ParserUnregMsg)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, <a class="el" href="struct_c_c_x__message__t.html">CCX_message_t</a> *Msg))</td></tr>
+<tr class="memitem:gac7cfe767850696c31fc730217a8f019c" id="r_gac7cfe767850696c31fc730217a8f019c"><td class="memItemLeft">CCX_Status_t&#160;</td><td class="memItemRight"><a class="el" href="#gac7cfe767850696c31fc730217a8f019c">CCX_Init</a> (<a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, <a class="el" href="struct_c_c_x___r_x__table__t.html">CCX_RX_table_t</a> *CCX_RX_table, <a class="el" href="struct_c_c_x___t_x__table__t.html">CCX_TX_table_t</a> *CCX_TX_table, uint16_t RxTableSize, uint16_t TxTableSize, void(*SendFunction)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, const <a class="el" href="struct_c_c_x__message__t.html">CCX_message_t</a> *msg), <a class="el" href="#ga3ca4a4f49bf7ec070e0824b2eaec3549">CCX_BusIsFree_t</a>(*BusCheck)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance), void(*ParserUnregMsg)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, <a class="el" href="struct_c_c_x__message__t.html">CCX_message_t</a> *Msg))</td></tr>
+<tr class="memdesc:gac7cfe767850696c31fc730217a8f019c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an instance and validate its RX/TX tables.  <br /></td></tr>
 <tr class="memitem:ga70585984e6ec15a9196313ed8068272f" id="r_ga70585984e6ec15a9196313ed8068272f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga70585984e6ec15a9196313ed8068272f">CCX_tick_variable_register</a> (CCX_TIME_t *Variable)</td></tr>
 <tr class="memdesc:ga70585984e6ec15a9196313ed8068272f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the system tick source variable.  <br /></td></tr>
 <tr class="memitem:ga9a14f292c877600e284f2f653e6623bb" id="r_ga9a14f292c877600e284f2f653e6623bb"><td class="memItemLeft"><a id="ga9a14f292c877600e284f2f653e6623bb" name="ga9a14f292c877600e284f2f653e6623bb"></a>
@@ -595,6 +595,61 @@ const uint8_t&#160;</td><td class="memItemRight"><b>CCX_FD_DLC_TO_LEN</b> [16]</
 
 </div>
 </div>
+<a id="gac7cfe767850696c31fc730217a8f019c" name="gac7cfe767850696c31fc730217a8f019c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7cfe767850696c31fc730217a8f019c">&#9670;&#160;</a></span>CCX_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CCX_Status_t CCX_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *</td>          <td class="paramname"><span class="paramname"><em>Instance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_c_c_x___r_x__table__t.html">CCX_RX_table_t</a> *</td>          <td class="paramname"><span class="paramname"><em>CCX_RX_table</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_c_c_x___t_x__table__t.html">CCX_TX_table_t</a> *</td>          <td class="paramname"><span class="paramname"><em>CCX_TX_table</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>RxTableSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TxTableSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>SendFunction&#160;</em></span>)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, const <a class="el" href="struct_c_c_x__message__t.html">CCX_message_t</a> *msg), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ga3ca4a4f49bf7ec070e0824b2eaec3549">CCX_BusIsFree_t</a>(*</td>          <td class="paramname"><span class="paramname"><em>BusCheck&#160;</em></span>)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>ParserUnregMsg&#160;</em></span>)(const <a class="el" href="struct_c_c_x__instance__t.html">CCX_instance_t</a> *Instance, <a class="el" href="struct_c_c_x__message__t.html">CCX_message_t</a> *Msg)&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize an instance and validate its RX/TX tables. </p>
+<dl class="section note"><dt>Note</dt><dd>SendFunction and BusCheck must both be present for TX. With neither callback and no TX table, the instance supports RX-only Poll and rejects TX pushes. Nonempty TX entries require Data. DLC, ID, frame format, binary sort order, and hash capacity are validated before changing the instance. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>CCX_OK, CCX_NULL_PTR, CCX_WRONG_ARG, or CCX_MISSING_TIMEBASE. </dd></dl>
+
+</div>
+</div>
 <a id="gad33a15bfeb394e5be1c93375af807019" name="gad33a15bfeb394e5be1c93375af807019"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad33a15bfeb394e5be1c93375af807019">&#9670;&#160;</a></span>CCX_OnMessageTransmitted()</h2>
 
@@ -685,7 +740,7 @@ OnMessageTransmitted callback is for user notification only</dd></dl>
 
 <p>Rebuild hash table for RX message lookup. </p>
 <p>This function rebuilds the internal hash table used for fast RX message lookup when CCX_RX_SEARCH_HASH is defined at compile time.</p>
-<p>Call this function after modifying the RX table (CCX_RX_table) to update the hash table. The hash table is automatically built during CCX_Init(), so manual rebuild is only needed if you dynamically modify the RX table after initialization.</p>
+<p>Call this function after modifying the RX table (CCX_RX_table) to update the hash table. The hash table is automatically built during <a class="el" href="#gac7cfe767850696c31fc730217a8f019c" title="Initialize an instance and validate its RX/TX tables.">CCX_Init()</a>, so manual rebuild is only needed if you dynamically modify the RX table after initialization.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Instance</td><td>CAN instance</td></tr>
@@ -694,7 +749,9 @@ OnMessageTransmitted callback is for user notification only</dd></dl>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This function does nothing if CCX_RX_SEARCH_HASH is not defined </dd>
 <dd>
-Not needed for linear search or binary search modes</dd></dl>
+Not needed for linear search or binary search modes </dd>
+<dd>
+An empty or oversized runtime table clears the hash. Init rejects sizes above CCX_RX_HASH_SIZE; a table exactly at capacity is supported.</dd></dl>
 <div class="fragment"><div class="line"><span class="comment">// After modifying RX table</span></div>
 <div class="line">rx_table[5].ID = 0x456;</div>
 <div class="line"><a class="code hl_function" href="#ga46683f490c2b03702915827ca8c7b251">CCX_RX_RebuildHash</a>(&amp;can_instance);</div>

@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CAN CoreX<span id="projectnumber">&#160;2.3.1</span>
+   <div id="projectname">CAN CoreX<span id="projectnumber">&#160;3.0.0</span>
    </div>
    <div id="projectbrief">Table-driven CAN, CAN FD, ISO-TP, network simulation, and bus monitoring library</div>
   </td>
@@ -332,7 +332,7 @@ Functions</h2></td></tr>
 <div class="line">    .LastTick = 0                                                                                                  \</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__ccx__core_html_ga59fbea40b5d08cdab9cf100b52535b77"><div class="ttname"><a href="group__ccx__core.html#ga59fbea40b5d08cdab9cf100b52535b77">CCX_DLC_ANY</a></div><div class="ttdeci">#define CCX_DLC_ANY</div><div class="ttdoc">Special DLC value for wildcard matching in RX table.</div><div class="ttdef"><b>Definition</b> can_corex.h:110</div></div>
-<div class="ttc" id="agroup__ccx__core_html_ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d"><div class="ttname"><a href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d">CCX_FRAME_FORMAT_CLASSIC</a></div><div class="ttdeci">@ CCX_FRAME_FORMAT_CLASSIC</div><div class="ttdoc">Classic CAN 2.0, max 8-byte payload.</div><div class="ttdef"><b>Definition</b> can_corex.h:277</div></div>
+<div class="ttc" id="agroup__ccx__core_html_ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d"><div class="ttname"><a href="group__ccx__core.html#ggab419a9e22226c54717fa25f1ad108b94aaefe92dc9489cbc5f867a03d886a560d">CCX_FRAME_FORMAT_CLASSIC</a></div><div class="ttdeci">@ CCX_FRAME_FORMAT_CLASSIC</div><div class="ttdoc">Classic CAN 2.0, max 8-byte payload.</div><div class="ttdef"><b>Definition</b> can_corex.h:299</div></div>
 <div class="ttc" id="agroup__ccx__isotp_html_gab47464a4f25f25415d78e304bb4b27fe"><div class="ttname"><a href="#gab47464a4f25f25415d78e304bb4b27fe">CCX_ISOTP_RX_Parser</a></div><div class="ttdeci">void CCX_ISOTP_RX_Parser(const CCX_instance_t *CanInstance, CCX_message_t *Msg, uint16_t Slot, void *UserData)</div><div class="ttdoc">Parser function for CAN CoreX RX table.</div></div>
 </div><!-- fragment -->
 <p>Macro to generate CAN CoreX RX table entry for ISO-TP RX instance. </p>
@@ -787,6 +787,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize ISO-TP RX instance. </p>
+<dl class="section note"><dt>Note</dt><dd>No prior zero-initialization is required. Every Init discards any previous transfer without callbacks; failure leaves the instance disabled. Config may point to Instance-&gt;Config. Already queued CAN frames are not removed. </dd>
+<dd>
+A valid SF replaces an active fragmented RX with a sequence error for the old transfer. Failure to queue FC terminates RX with ERROR_BUSY. </dd>
+<dd>
+RX start/progress callbacks may call Abort or Init. This cancels the interrupted parser operation. Completion/error cleanup occurs before callbacks.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Instance</td><td>Pointer to RX instance structure </td></tr>
@@ -904,7 +909,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>CCX_ISOTP_OK on success, error code otherwise</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Data pointer must remain valid until OnTransmitComplete is called </dd>
 <dd>
-Header selection is based on ISO-TP payload length before padding. For example, in FD mode payloads <span class="tt">1..7</span> still use the standard single-frame header even if CAN padding expands the frame to a larger <span class="tt">TxDL</span>. </dd></dl>
+FD single frames with a final CAN payload longer than 8 bytes use the two-byte SF escape header, including padded payloads of 1..7 bytes. </dd></dl>
 
 </div>
 </div>
@@ -1170,7 +1175,9 @@ Header selection is based on ISO-TP payload length before padding. For example, 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>CCX_ISOTP_OK on success, error code otherwise</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>In FD builds, <span class="tt">Config-&gt;TxDL</span> is validated only for FD sessions. Classic sessions keep the classic <span class="tt">4095</span>-byte transport limit even when <span class="tt"><a class="el" href="group__ccx__core.html#gafd02a045a7207ae057d6bad9052b46d2" title="Enables CAN FD support (64-byte payload, BRS, ESI, FDF).">CCX_ENABLE_CANFD</a>=1</span>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>No prior zero-initialization is required. Every Init discards any previous transfer without callbacks; failure leaves the instance disabled. Config may point to Instance-&gt;Config. Frames already queued in CAN CoreX are not removed. </dd>
+<dd>
+In FD builds, <span class="tt">Config-&gt;TxDL</span> is validated only for FD sessions. Classic sessions keep the classic <span class="tt">4095</span>-byte transport limit even when <span class="tt"><a class="el" href="group__ccx__core.html#gafd02a045a7207ae057d6bad9052b46d2" title="Enables CAN FD support (64-byte payload, BRS, ESI, FDF).">CCX_ENABLE_CANFD</a>=1</span>. </dd></dl>
 
 </div>
 </div>

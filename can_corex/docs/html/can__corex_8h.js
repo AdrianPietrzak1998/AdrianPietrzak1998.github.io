@@ -20,6 +20,7 @@ var can__corex_8h =
     ] ],
     [ "CCX_FD_LenToDLC", "group__ccx__core.html#gaa62882e2b4e950f161f4e58098b516fa", null ],
     [ "CCX_GetGlobalStats", "group__ccx__core.html#ga79556e20424c525a422c6e65bf460a3e", null ],
+    [ "CCX_Init", "group__ccx__core.html#gac7cfe767850696c31fc730217a8f019c", null ],
     [ "CCX_OnMessageTransmitted", "group__ccx__core.html#gad33a15bfeb394e5be1c93375af807019", null ],
     [ "CCX_ResetGlobalStats", "group__ccx__core.html#ga40ca423ee716097e87b2a28f6bf1603e", null ],
     [ "CCX_RX_RebuildHash", "group__ccx__core.html#ga46683f490c2b03702915827ca8c7b251", null ],
